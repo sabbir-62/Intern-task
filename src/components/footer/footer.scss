@@ -1,0 +1,140 @@
+@import "../../App.scss";
+
+
+.footer{
+    background: #F99F1C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+
+    @include mobile{
+        flex-direction: column;
+    }
+
+
+    .contact{
+
+        
+        margin-top: 50px;
+
+        .emailField{
+            height: 45px;
+            position: relative;
+            
+            
+
+            input{
+                width: 550px;
+                height: 45px;
+                border: none;
+                outline: none;
+                border-radius: 20px;
+                padding-left: 25px;
+
+
+                @include mobile{
+                    width: 450px;
+                }
+
+                @include small-mobile{
+                    max-width: 300px;
+                }
+                
+                
+            }
+
+            button{
+                background: #FD6011;
+                color: white;
+                border: none;
+                outline: none;
+                height: 35px;
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                padding: 3px 20px;
+                border-radius: 12px;
+
+                @include small-mobile{
+                    padding: 3px 10px;
+                }
+
+                
+            }
+        }
+
+        .copyrightAndLinks{
+                padding-top: 50px;
+                display: flex;
+                position: relative;
+
+                h5{
+                    font-weight: 700;
+
+
+                    span{
+                        color:#FD6011; 
+                    }
+                }
+                p{
+                    font-size: 13px;
+                    font-weight: 600;
+                    padding-left: 5px;
+                }
+
+
+                .links{
+                    position: absolute;
+                    right: -60px;
+                    bottom: 10px;
+
+                    @include mobile{
+                        display: block;
+                        position: relative;
+                        right: 0;
+                    }
+                    
+
+                    svg{
+                        background-color: #FEDDBA;
+                        margin: 5px;
+                        height: 30px;
+                        width: 30px;
+                        padding: 5px;
+                        border-radius: 50%;
+                    }
+
+                }
+
+
+                @include mobile{
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+        }
+    }
+
+
+    .image{
+        
+        img{
+            height: 250px;
+           padding-left: 100px;
+
+            
+
+
+            @include tablet{
+                display : none;
+            }
+        }
+    }
+}

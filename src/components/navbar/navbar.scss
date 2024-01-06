@@ -1,0 +1,131 @@
+@import "../../App.scss";
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+
+  margin: 0 20px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+  }
+
+  .companyName {
+    font-weight: 700;
+    margin-right: 30px;
+
+    @media only screen and (max-width: 768px) {
+      margin-right: 5px;
+    }
+  }
+
+  .searchAndDropDown {
+    display: flex;
+    
+
+    .form-outline {
+      display: flex;
+      position: relative;
+      outline: none;
+      max-width: 400px;
+
+      svg {
+        position: absolute;
+        top: 30%;
+        left: 10px;
+        color: #f99f1c;
+      }
+
+      .form-control {
+        background: #fefefe;
+        max-width: 450px;
+        padding: 7px 0 7px 30px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+
+        @media only screen and (min-width: 768px) {
+          width: 45rem;
+        }
+
+        @media only screen and (max-width: 767px) {
+          
+          margin-left: 0;
+        }
+      }
+    }
+
+    .dropdown {
+      display: flex;
+      justify-content: space-between;
+      background: #fefefe;
+      border-radius: 8px;
+      margin: 0 5px;
+      width: 160px;
+
+      @media only screen and (max-width: 767px) {
+        width: 140px;
+      }
+
+   
+
+
+      .btn {
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+      }
+
+      .dropdown-menu {
+        outline: none;
+        border: none;
+
+        @media only screen and (max-width: 767px) {
+            width: 140px;
+            margin-right: 40px !important;
+          }
+    
+
+        .dropdown-item {
+          font-weight: 500;
+          color: #85909b;
+        }
+
+        .dropdown-item:hover {
+          background: #e7e9ec;
+          color: #f99f1c;
+        }
+      }
+
+      .dropdownBtn {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .account {
+    background: #fd6011;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+}
