@@ -1,5 +1,5 @@
-To run this code_
+To run this code____
 Clone this repository in your local system.
 Open this code in vscode.
-Run "npn install" into vscode terminal.
-Run this code with "npm run dev" command.
+Write "npn install" into vscode terminal and run.
+Now Write "npm run dev" command and run this project.
