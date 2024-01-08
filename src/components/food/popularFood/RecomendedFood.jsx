@@ -5,6 +5,7 @@ import "./popularFood.scss";
 
 
 
+
 /*----------Recommended Food Component----------*/
 const RecommendedFood = () => {
   const [data, setData] = useState([]);
