@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./popularFood.scss";
 
-
 const PopularFood = () => {
   const [data, setData] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
@@ -15,7 +14,7 @@ const PopularFood = () => {
       try {
         const apiUrl =
           "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10";
-        const response = await axios.get(apiUrl);
+        const response = await axios.get( apiUrl);
         setData(response.data.Items);
       } catch (error) {
         console.error("Failed", error);
@@ -23,7 +22,6 @@ const PopularFood = () => {
     };
 
     readAllData();
-
 
     //get window size and set
     const handleResize = () => {
@@ -45,7 +43,6 @@ const PopularFood = () => {
     }
   });
 
-
   //right shift item
   const shiftRight = () => {
     setStartIndex((prevStartIndex) =>
@@ -54,7 +51,6 @@ const PopularFood = () => {
         : prevStartIndex
     );
   };
-
 
   //left shift item
   const shiftLeft = () => {
@@ -70,7 +66,6 @@ const PopularFood = () => {
     count === 0 ? setCount(1) : setCount(0);
   };
 
-
   //return jsx
   return (
     <div className="popularFoodContainer">
@@ -83,7 +78,7 @@ const PopularFood = () => {
             name="file"
           />
         </label>
-        <input type="text"  placeholder="Enter Food Name"/>
+        <input type="text" placeholder="Enter Food Name" />
         <button className="button bg-primary">Submit</button>
       </form>
       <div className="heading">
