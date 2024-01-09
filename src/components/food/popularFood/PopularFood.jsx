@@ -9,17 +9,25 @@ const PopularFood = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    //read all data
     const readAllData = async () => {
       try {
-        const apiUrl ="/.netlify/functions/proxy";
-        const response = await axios.get( apiUrl);
-        setData(response.data.Items);
+        const apiUrl = "/.netlify/functions/proxy";
+        const response = await axios.get(apiUrl);
+  
+        // Log the API response to the console
+        console.log("API Response:", response);
+  
+        const updatedData = response.data.Items.map(item => ({
+          ...item,
+          ImageUrl: item.ImageUrl.replace(/^http:/, 'https:')
+        }));
+  
+        setData(updatedData);
       } catch (error) {
         console.error("Failed", error);
       }
     };
-
+  
     readAllData();
 
     //get window size and set
@@ -95,8 +103,9 @@ const PopularFood = () => {
       <div className="cards">
         {popularData.slice(startIndex, startIndex + a).map((item, i) => (
           <div className="card" key={i}>
-            <img src={item.ImageUrl} alt={`Image ${i}`} />
-            <div className="name">{item.Name}</div>
+            {/* <img src={item.ImageUrl} alt={`Image ${i}`} />
+            <div className="name">{item.Name}</div> */}
+            {console.log(item.Name)}
           </div>
         ))}
       </div>
