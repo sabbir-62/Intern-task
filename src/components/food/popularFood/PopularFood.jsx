@@ -9,14 +9,12 @@ const PopularFood = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    //read all data
     const readAllData = async () => {
       try {
-        const apiUrl = "/.netlify/functions/proxy";
-        const response = await axios.get(apiUrl);
-
-        // Log the API response to the console
-        console.log("API Response:", response);
-
+        const apiUrl =
+          "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10";
+        const response = await axios.get( apiUrl);
         setData(response.data.Items);
       } catch (error) {
         console.error("Failed", error);
@@ -68,17 +66,7 @@ const PopularFood = () => {
     count === 0 ? setCount(1) : setCount(0);
   };
 
-  // Helper function to generate image URLs dynamically
-  const generateImageUrl = (url) => {
-    // Check if the URL starts with http, and use it as-is
-    if (url.startsWith("http://")) {
-      return url;
-    }
-    // Otherwise, assume it's accessible over both http and https
-    return `https:${url}`;
-  };
-
-  // Return JSX
+  //return jsx
   return (
     <div className="popularFoodContainer">
       <form className={count === 1 ? "active" : "inactive"}>
@@ -108,7 +96,7 @@ const PopularFood = () => {
       <div className="cards">
         {popularData.slice(startIndex, startIndex + a).map((item, i) => (
           <div className="card" key={i}>
-            <img src={generateImageUrl(item.ImageUrl)} alt={`Image ${i}`} />
+            <img src={item.ImageUrl} alt={`Image ${i}`} />
             <div className="name">{item.Name}</div>
           </div>
         ))}
