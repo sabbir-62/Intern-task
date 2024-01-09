@@ -105,7 +105,7 @@ const PopularFood = () => {
           <div className="card" key={i}>
             {/* <img src={item.ImageUrl} alt={`Image ${i}`} />
             <div className="name">{item.Name}</div> */}
-            {console.log(item.Name)}
+            {console.log(item.ImageUrl)}
           </div>
         ))}
       </div>
