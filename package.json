@@ -2,6 +2,7 @@
   "name": "intern_project",
   "private": true,
   "version": "0.0.0",
+  "proxy": "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10",
   "type": "module",
   "scripts": {
     "dev": "vite",
