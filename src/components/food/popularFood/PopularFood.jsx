@@ -103,9 +103,8 @@ const PopularFood = () => {
       <div className="cards">
         {popularData.slice(startIndex, startIndex + a).map((item, i) => (
           <div className="card" key={i}>
-            {/* <img src={item.ImageUrl} alt={`Image ${i}`} />
-            <div className="name">{item.Name}</div> */}
-            {console.log(item.ImageUrl)}
+            <img src={item.ImageUrl} alt={`Image ${i}`} />
+            <div className="name">{item.Name}</div>
           </div>
         ))}
       </div>
