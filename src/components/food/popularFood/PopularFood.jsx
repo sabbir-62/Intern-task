@@ -13,21 +13,16 @@ const PopularFood = () => {
       try {
         const apiUrl = "/.netlify/functions/proxy";
         const response = await axios.get(apiUrl);
-  
+
         // Log the API response to the console
         console.log("API Response:", response);
-  
-        const updatedData = response.data.Items.map(item => ({
-          ...item,
-          ImageUrl: item.ImageUrl.replace(/^http:/, 'http:/')
-        }));
-  
-        setData(updatedData);
+
+        setData(response.data.Items);
       } catch (error) {
         console.error("Failed", error);
       }
     };
-  
+
     readAllData();
 
     //get window size and set
@@ -73,7 +68,17 @@ const PopularFood = () => {
     count === 0 ? setCount(1) : setCount(0);
   };
 
-  //return jsx
+  // Helper function to generate image URLs dynamically
+  const generateImageUrl = (url) => {
+    // Check if the URL starts with http, and use it as-is
+    if (url.startsWith("http://")) {
+      return url;
+    }
+    // Otherwise, assume it's accessible over both http and https
+    return `https:${url}`;
+  };
+
+  // Return JSX
   return (
     <div className="popularFoodContainer">
       <form className={count === 1 ? "active" : "inactive"}>
@@ -103,7 +108,7 @@ const PopularFood = () => {
       <div className="cards">
         {popularData.slice(startIndex, startIndex + a).map((item, i) => (
           <div className="card" key={i}>
-            <img src={item.ImageUrl} alt={`Image ${i}`} />
+            <img src={generateImageUrl(item.ImageUrl)} alt={`Image ${i}`} />
             <div className="name">{item.Name}</div>
           </div>
         ))}
