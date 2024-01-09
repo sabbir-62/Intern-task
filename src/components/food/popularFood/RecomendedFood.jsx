@@ -16,7 +16,7 @@ const RecommendedFood = () => {
     //read all data
     const readAllData = async () => {
       try {
-        const apiUrl ="http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10";
+        const apiUrl ="https://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10";
         const response = await axios.get(apiUrl);
         setData(response.data.Items);
       } catch (error) {
