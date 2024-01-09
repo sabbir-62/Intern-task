@@ -18,8 +18,7 @@ const PopularFood = () => {
         console.log("API Response:", response);
   
         const updatedData = response.data.Items.map(item => ({
-          ...item,
-          ImageUrl: item.ImageUrl.replace(/^http:/, 'http:')
+          ...item
         }));
   
         setData(updatedData);
