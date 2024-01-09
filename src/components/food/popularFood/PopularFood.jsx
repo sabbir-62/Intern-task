@@ -19,7 +19,7 @@ const PopularFood = () => {
   
         const updatedData = response.data.Items.map(item => ({
           ...item,
-          ImageUrl: item.ImageUrl.replace(/^http:/, 'https:')
+          ImageUrl: item.ImageUrl.replace(/^http:/, 'http:')
         }));
   
         setData(updatedData);
